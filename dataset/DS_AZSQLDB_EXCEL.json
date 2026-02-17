@@ -1,0 +1,12 @@
+{
+	"name": "DS_AZSQLDB_EXCEL",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZSQLDB_EXCEL",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}

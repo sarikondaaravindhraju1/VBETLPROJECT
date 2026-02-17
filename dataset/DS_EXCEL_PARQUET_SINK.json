@@ -1,0 +1,40 @@
+{
+	"name": "DS_EXCEL_PARQUET_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DS_EXCEL_PARQUET_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "order_id",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_sequential",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_type",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_installments",
+				"type": "UTF8"
+			},
+			{
+				"name": "payment_value",
+				"type": "UTF8"
+			}
+		]
+	}
+}
