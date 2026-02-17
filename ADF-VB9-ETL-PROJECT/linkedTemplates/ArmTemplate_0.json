@@ -15,9 +15,25 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_CSV_PARQUET_SINK'"
 		},
+		"DS_EXCEL_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_EXCEL_PARQUET_SINK'"
+		},
+		"DS_EXCEL_PARQUET_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DS_EXCEL_PARQUET_SOURCE'"
+		},
+		"LS_ASSQL_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ASSQL_EXCEL'"
+		},
 		"LS_AZSQLDB_CSVEXCEL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_CSVEXCEL'"
+		},
+		"LS_AZSQLDB_EXCEL_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQLDB_EXCEL'"
 		},
 		"LS_AZSQL_DB_password": {
 			"type": "secureString",
@@ -27,9 +43,25 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
 		},
+		"LS_AZURESQLDB_SP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURESQLDB_SP'"
+		},
+		"LS_AZURESQL_SP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZURESQL_SP'"
+		},
 		"LS_CSV_PARQUET_SOURCE_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET_SOURCE'"
+		},
+		"LS_EXCEL_PARQUET_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SINK'"
+		},
+		"LS_EXCEL_PARQUET_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SOURCE'"
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
@@ -47,6 +79,26 @@
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
+		"DS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ASSQL_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_ASSQL_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_ASSQL_EXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -56,6 +108,18 @@
 			"defaultValue": "free-sql-db-0193140"
 		},
 		"LS_AZSQLDB_CSVEXCEL_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
+		"LS_AZSQLDB_EXCEL_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQLDB_EXCEL_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZSQLDB_EXCEL_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
@@ -83,7 +147,39 @@
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
+		"LS_AZURESQLDB_SP_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZURESQLDB_SP_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZURESQLDB_SP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
+		"LS_AZURESQL_SP_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZURESQL_SP_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZURESQL_SP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
 		"LS_CSV_PARQUET_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		}
@@ -132,6 +228,62 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/DS_EXCEL_PARQUET_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('DS_EXCEL_PARQUET_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('DS_EXCEL_PARQUET_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_EXCEL_PARQUET_SOURCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('DS_EXCEL_PARQUET_SOURCE_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_ASSQL_EXCEL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_ASSQL_EXCEL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_ASSQL_EXCEL_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_ASSQL_EXCEL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_ASSQL_EXCEL_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_AZSQLDB_CSVEXCEL')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -148,6 +300,28 @@
 					"password": {
 						"type": "SecureString",
 						"value": "[parameters('LS_AZSQLDB_CSVEXCEL_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQLDB_EXCEL')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQLDB_EXCEL_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQLDB_EXCEL_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQLDB_EXCEL_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQLDB_EXCEL_password')]"
 					}
 				}
 			},
@@ -198,6 +372,50 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURESQLDB_SP')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURESQLDB_SP_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURESQLDB_SP_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURESQLDB_SP_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURESQLDB_SP_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZURESQL_SP')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZURESQL_SP_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZURESQL_SP_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZURESQL_SP_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZURESQL_SP_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_CSV_PARQUET_SOURCE')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -209,6 +427,40 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('LS_CSV_PARQUET_SOURCE_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EXCEL_PARQUET_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_EXCEL_PARQUET_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EXCEL_PARQUET_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_EXCEL_PARQUET_SOURCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_EXCEL_PARQUET_SOURCE_accountKey')]"
 					}
 				}
 			},
@@ -248,6 +500,24 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_CSVEXCEL')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DS_AZSQLDB_EXCEL')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "LS_AZSQLDB_EXCEL",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "AzureSqlTable",
+				"schema": [],
+				"typeProperties": {}
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_EXCEL')]"
 			]
 		},
 		{
@@ -312,807 +582,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/DS_CSV_PARQUET_SINK')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_CSV_PARQUET_SOURCE')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_CSV_PARQUET_SOURCE",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "DelimitedText",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": "csv",
-						"fileSystem": "input"
-					},
-					"columnDelimiter": ",",
-					"escapeChar": "\\",
-					"firstRowAsHeader": true,
-					"quoteChar": "\""
-				},
-				"schema": [
-					{
-						"name": "order_id",
-						"type": "String"
-					},
-					{
-						"name": "payment_sequential",
-						"type": "String"
-					},
-					{
-						"name": "payment_type",
-						"type": "String"
-					},
-					{
-						"name": "payment_installments",
-						"type": "String"
-					},
-					{
-						"name": "payment_value",
-						"type": "String"
-					}
-				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_CSV_PARQUET_SOURCE')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_CSV')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "LKUP_JOB_DETAILS",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderStoredProcedureName": "[[dbo].[vb_get_job_dtls]",
-								"storedProcedureParameters": {
-									"Triggername": {
-										"type": "String",
-										"value": {
-											"value": "@pipeline().parameters.Trigger",
-											"type": "Expression"
-										}
-									}
-								},
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "DS_AZSQLDB_CSV",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						}
-					},
-					{
-						"name": "SP-START-LOG-ENTRY",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "LKUP_JOB_DETAILS",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[vb_start_log_entry]",
-							"storedProcedureParameters": {
-								"jobid": {
-									"value": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.jobid",
-										"type": "Expression"
-									},
-									"type": "Int32"
-								},
-								"pipeline_id": {
-									"value": {
-										"value": "@pipeline().RunId",
-										"type": "Expression"
-									},
-									"type": "String"
-								}
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "DS_AZSQLDB_CSV",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
-						"name": "SET_MAPPING_VARIABLE",
-						"type": "SetVariable",
-						"dependsOn": [],
-						"policy": {
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"variableName": "Mapping",
-							"value": {
-								"value": "{\n    \"type\": \"TabularTranslator\",\n    \"mappings\": [\n        {\n            \"source\": {\n                \"name\": \"review_id\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewid\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"order_id\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"orderid\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"review_score\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewscore\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"review_comment_title\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewcommenttitle\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"review_comment_message\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewcommentmessage\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"review_creation_date\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewcreationdate\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n        {\n            \"source\": {\n                \"name\": \"review_answer_timestamp\",\n                \"type\": \"String\",\n                \"physicalType\": \"String\"\n            },\n            \"sink\": {\n                \"name\": \"reviewanswertimestamp\",\n                \"type\": \"String\",\n                \"physicalType\": \"UTF8\"\n            }\n        },\n    ],\n    \"typeConversion\": true,\n    \"typeConversionSettings\": {\n        \"allowDataTruncation\": true,\n        \"treatBooleanAsNumber\": false\n    }\n}\n",
-								"type": "Expression"
-							}
-						}
-					},
-					{
-						"name": "CPY_CSV",
-						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "SP-START-LOG-ENTRY",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							},
-							{
-								"activity": "SET_MAPPING_VARIABLE",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "DelimitedTextSource",
-								"storeSettings": {
-									"type": "AzureBlobFSReadSettings",
-									"recursive": true,
-									"wildcardFileName": "*",
-									"enablePartitionDiscovery": false
-								},
-								"formatSettings": {
-									"type": "DelimitedTextReadSettings"
-								}
-							},
-							"sink": {
-								"type": "ParquetSink",
-								"storeSettings": {
-									"type": "AzureBlobFSWriteSettings"
-								},
-								"formatSettings": {
-									"type": "ParquetWriteSettings"
-								}
-							},
-							"enableStaging": false,
-							"translator": {
-								"type": "TabularTranslator",
-								"typeConversion": true,
-								"typeConversionSettings": {
-									"allowDataTruncation": true,
-									"treatBooleanAsNumber": false
-								}
-							}
-						},
-						"inputs": [
-							{
-								"referenceName": "DS_CSV_PARQUET_SOURCE",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						],
-						"outputs": [
-							{
-								"referenceName": "DS_CSV_PARQUET_SINK",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						]
-					},
-					{
-						"name": "SP-SUCCESS-LOG-ENTRY",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "CPY_CSV",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[vb_end_log_entry]",
-							"storedProcedureParameters": {
-								"error": {
-									"value": "",
-									"type": "String"
-								},
-								"jobid": {
-									"value": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.firstRow.jobid",
-										"type": "Expression"
-									},
-									"type": "Int32"
-								},
-								"pipeline_id": {
-									"value": {
-										"value": "@pipeline().RunId",
-										"type": "Expression"
-									},
-									"type": "String"
-								}
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "DS_AZSQLDB_CSV",
-							"type": "LinkedServiceReference"
-						}
-					},
-					{
-						"name": "SP-FAILED-LOG-ENTRY",
-						"type": "SqlServerStoredProcedure",
-						"dependsOn": [
-							{
-								"activity": "CPY_CSV",
-								"dependencyConditions": [
-									"Failed"
-								]
-							}
-						],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"storedProcedureName": "[[dbo].[vb_end_log_entry]",
-							"storedProcedureParameters": {
-								"error": {
-									"value": {
-										"value": "@activity('CPY_CSV').error.message",
-										"type": "Expression"
-									},
-									"type": "String"
-								},
-								"jobid": {
-									"value": {
-										"value": "@activity('LKUP_JOB_DETAILS').output.jobid",
-										"type": "Expression"
-									},
-									"type": "Int32"
-								},
-								"pipeline_id": {
-									"value": {
-										"value": "@pipeline().RunId",
-										"type": "Expression"
-									},
-									"type": "String"
-								}
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "DS_AZSQLDB_CSV",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Mapping": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-17T11:37:11Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_CSV')]",
-				"[concat(variables('factoryId'), '/linkedServices/DS_AZSQLDB_CSV')]",
-				"[concat(variables('factoryId'), '/datasets/DS_CSV_PARQUET_SOURCE')]",
-				"[concat(variables('factoryId'), '/datasets/DS_CSV_PARQUET_SINK')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL_SWITCH_CSV_EXCEL')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "LKUP_GET_FILETYPE_CSV_EXCEL",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L4_switch_type \nfrom dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
-									"type": "Expression"
-								},
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "DS_AZSQLDB_CSVEXCEL",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						}
-					},
-					{
-						"name": "SWITCH_CSV_EXCEL",
-						"type": "Switch",
-						"dependsOn": [
-							{
-								"activity": "LKUP_GET_FILETYPE_CSV_EXCEL",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"on": {
-								"value": "@activity('LKUP_GET_FILETYPE_CSV_EXCEL').output.firstRow.L4_switch_type",
-								"type": "Expression"
-							},
-							"cases": [
-								{
-									"value": "csv",
-									"activities": [
-										{
-											"name": "EXEC_CSV",
-											"type": "ExecutePipeline",
-											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL_CSV",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {
-													"Trigger": {
-														"value": "@pipeline().parameters.Trigger",
-														"type": "Expression"
-													}
-												}
-											}
-										}
-									]
-								},
-								{
-									"value": "excel",
-									"activities": [
-										{
-											"name": "Wait1",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Mapping": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-17T12:40:43Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_AZSQLDB_CSVEXCEL')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_CSV')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL3_CLOUDSG_CSV_EXCEL')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "LKUP_SRC_FILES",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L3_switch_type \nFROM dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
-									"type": "Expression"
-								},
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "DS_AZSQL_SRCDB",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						}
-					},
-					{
-						"name": "Switch_SRC_LOC_CSV_EXCEL",
-						"type": "Switch",
-						"dependsOn": [
-							{
-								"activity": "LKUP_SRC_FILES",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"on": {
-								"value": "@activity('LKUP_SRC_FILES').output.firstRow.L3_switch_type",
-								"type": "Expression"
-							},
-							"cases": [
-								{
-									"value": "Azure",
-									"activities": [
-										{
-											"name": "Exec_file_csv",
-											"type": "ExecutePipeline",
-											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL_SWITCH_CSV_EXCEL",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {
-													"Trigger": {
-														"value": "@pipeline().parameters.Trigger",
-														"type": "Expression"
-													}
-												}
-											}
-										}
-									]
-								},
-								{
-									"value": "aws",
-									"activities": [
-										{
-											"name": "Wait1",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								},
-								{
-									"value": "gcp",
-									"activities": [
-										{
-											"name": "Wait2",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Mapping": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-17T13:03:35Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_AZSQL_SRCDB')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_SWITCH_CSV_EXCEL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL2_RAW_DATA')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "LKUP_L2_TYPE",
-						"type": "Lookup",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"source": {
-								"type": "AzureSqlSource",
-								"sqlReaderQuery": {
-									"value": "SELECT DISTINCT L2_switch_type \nfrom dbo.vb_tbl_job a\nJOIN dbo.vb_tbl_trigger b ON a.trigger_id = b.trigger_id\nWHERE b.trigger_name = '@{pipeline().parameters.Trigger}'",
-									"type": "Expression"
-								},
-								"queryTimeout": "02:00:00",
-								"partitionOption": "None"
-							},
-							"dataset": {
-								"referenceName": "DS_AZSQL_DB",
-								"type": "DatasetReference",
-								"parameters": {}
-							}
-						}
-					},
-					{
-						"name": "SWITCH_SOURCE",
-						"type": "Switch",
-						"dependsOn": [
-							{
-								"activity": "LKUP_L2_TYPE",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"userProperties": [],
-						"typeProperties": {
-							"on": {
-								"value": "@activity('LKUP_L2_TYPE').output.firstRow.L2_switch_type\n",
-								"type": "Expression"
-							},
-							"cases": [
-								{
-									"value": "CloudStorage",
-									"activities": [
-										{
-											"name": "EXEC_PL3_CLOUD",
-											"type": "ExecutePipeline",
-											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL3_CLOUDSG_CSV_EXCEL",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {
-													"Trigger": {
-														"value": "@pipeline().parameters.Trigger",
-														"type": "Expression"
-													}
-												}
-											}
-										}
-									]
-								},
-								{
-									"value": "api",
-									"activities": [
-										{
-											"name": "Wait1",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								},
-								{
-									"value": "sql",
-									"activities": [
-										{
-											"name": "Wait2",
-											"type": "Wait",
-											"dependsOn": [],
-											"userProperties": [],
-											"typeProperties": {
-												"waitTimeInSeconds": 1
-											}
-										}
-									]
-								}
-							]
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Mapping": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-17T12:55:56Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/DS_AZSQL_DB')]",
-				"[concat(variables('factoryId'), '/pipelines/PL3_CLOUDSG_CSV_EXCEL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/PL1_MASTER')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "SET_VAR_TRIGGER",
-						"type": "SetVariable",
-						"dependsOn": [],
-						"policy": {
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"variableName": "Trigger_variable",
-							"value": {
-								"value": "@if(equals(pipeline().parameters.Trigger, null),pipeline().TriggerName,pipeline().parameters.Trigger)",
-								"type": "Expression"
-							}
-						}
-					},
-					{
-						"name": "Exec_RAW_DATA",
-						"type": "ExecutePipeline",
-						"dependsOn": [
-							{
-								"activity": "SET_VAR_TRIGGER",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
-						"policy": {
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"pipeline": {
-								"referenceName": "PL2_RAW_DATA",
-								"type": "PipelineReference"
-							},
-							"waitOnCompletion": true,
-							"parameters": {
-								"Trigger": {
-									"value": "@pipeline().parameters.Trigger",
-									"type": "Expression"
-								}
-							}
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"parameters": {
-					"Trigger": {
-						"type": "string"
-					}
-				},
-				"variables": {
-					"Trigger_variable": {
-						"type": "String"
-					}
-				},
-				"annotations": [],
-				"lastPublishTime": "2026-02-17T11:37:13Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/PL2_RAW_DATA')]"
 			]
 		}
 	]
