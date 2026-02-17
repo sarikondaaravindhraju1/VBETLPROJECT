@@ -214,12 +214,12 @@
 						"userProperties": [],
 						"typeProperties": {
 							"on": {
-								"value": "@activity('LKUP_L2_TYPE').output.firstRow.L2_switch_type",
+								"value": "@activity('LKUP_L2_TYPE').output.firstRow.L2_switch_type\n",
 								"type": "Expression"
 							},
 							"cases": [
 								{
-									"value": "CloudStorge",
+									"value": "CloudStorage",
 									"activities": [
 										{
 											"name": "EXEC_PL3_CLOUD",
@@ -246,7 +246,7 @@
 									]
 								},
 								{
-									"value": "API",
+									"value": "api",
 									"activities": [
 										{
 											"name": "Wait1",
