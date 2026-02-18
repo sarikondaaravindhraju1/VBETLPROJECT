@@ -17,6 +17,12 @@
 		"DS_EXCEL_PARQUET_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_BULK_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_BULK_SOURCE_accountKey": {
+			"value": ""
+		},
 		"LS_ADLS_JSON_SINK_accountKey": {
 			"value": ""
 		},
@@ -68,12 +74,6 @@
 		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 			"value": ""
 		},
-		"LS_ADLS_BULK_SOURCE_accountKey": {
-			"value": ""
-		},
-		"LS_ADLS_BULK_SINK_accountKey": {
-			"value": ""
-		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
@@ -90,6 +90,12 @@
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"LS_ADLS_JSON_SINK_properties_typeProperties_url": {
@@ -190,12 +196,6 @@
 		},
 		"LS_SNOWFLAKE_properties_typeProperties_database": {
 			"value": "DBAZURESNOW"
-		},
-		"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
-			"value": "https://savb9etlraw.dfs.core.windows.net/"
-		},
-		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
-			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		}
 	}
 }

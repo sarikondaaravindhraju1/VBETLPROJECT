@@ -23,6 +23,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_EXCEL_PARQUET_SOURCE'"
 		},
+		"LS_ADLS_BULK_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SINK'"
+		},
+		"LS_ADLS_BULK_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SOURCE'"
+		},
 		"LS_ADLS_JSON_SINK_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_JSON_SINK'"
@@ -91,14 +99,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SNOWFLAKE_BS_PARQUET'"
 		},
-		"LS_ADLS_BULK_SOURCE_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SOURCE'"
-		},
-		"LS_ADLS_BULK_SINK_accountKey": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SINK'"
-		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -120,6 +120,14 @@
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
@@ -255,14 +263,6 @@
 			"type": "string",
 			"defaultValue": "DBAZURESNOW"
 		},
-		"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
-		},
-		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
-		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -301,6 +301,12 @@
 					},
 					"DS_EXCEL_PARQUET_SOURCE_accountKey": {
 						"value": "[parameters('DS_EXCEL_PARQUET_SOURCE_accountKey')]"
+					},
+					"LS_ADLS_BULK_SINK_accountKey": {
+						"value": "[parameters('LS_ADLS_BULK_SINK_accountKey')]"
+					},
+					"LS_ADLS_BULK_SOURCE_accountKey": {
+						"value": "[parameters('LS_ADLS_BULK_SOURCE_accountKey')]"
 					},
 					"LS_ADLS_JSON_SINK_accountKey": {
 						"value": "[parameters('LS_ADLS_JSON_SINK_accountKey')]"
@@ -341,12 +347,6 @@
 					"LS_EXCEL_PARQUET_SINK_accountKey": {
 						"value": "[parameters('LS_EXCEL_PARQUET_SINK_accountKey')]"
 					},
-					"LS_EXCEL_PARQUET_SOURCE_accountKey": {
-						"value": "[parameters('LS_EXCEL_PARQUET_SOURCE_accountKey')]"
-					},
-					"LS_REST_SINK_PARQUET_accountKey": {
-						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
-					},
 					"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 						"value": "[parameters('DS_AZSQLDB_CSV_properties_typeProperties_server')]"
 					},
@@ -364,6 +364,12 @@
 					},
 					"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_BULK_SINK_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_BULK_SOURCE_properties_typeProperties_url')]"
 					},
 					"LS_ADLS_JSON_SINK_properties_typeProperties_url": {
 						"value": "[parameters('LS_ADLS_JSON_SINK_properties_typeProperties_url')]"
@@ -451,12 +457,6 @@
 					},
 					"LS_EXCEL_PARQUET_SINK_properties_typeProperties_url": {
 						"value": "[parameters('LS_EXCEL_PARQUET_SINK_properties_typeProperties_url')]"
-					},
-					"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
-						"value": "[parameters('LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url')]"
-					},
-					"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
-						"value": "[parameters('LS_REST_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
@@ -476,29 +476,29 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
+					"LS_EXCEL_PARQUET_SOURCE_accountKey": {
+						"value": "[parameters('LS_EXCEL_PARQUET_SOURCE_accountKey')]"
+					},
+					"LS_REST_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
+					},
 					"LS_SNOWFLAKE_password": {
 						"value": "[parameters('LS_SNOWFLAKE_password')]"
 					},
 					"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 						"value": "[parameters('LS_SNOWFLAKE_BS_PARQUET_connectionString')]"
 					},
-					"LS_ADLS_BULK_SOURCE_accountKey": {
-						"value": "[parameters('LS_ADLS_BULK_SOURCE_accountKey')]"
+					"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url')]"
 					},
-					"LS_ADLS_BULK_SINK_accountKey": {
-						"value": "[parameters('LS_ADLS_BULK_SINK_accountKey')]"
+					"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_SINK_PARQUET_properties_typeProperties_url')]"
 					},
 					"LS_REST_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('LS_REST_SOURCE_properties_typeProperties_url')]"
 					},
 					"LS_SNOWFLAKE_properties_typeProperties_database": {
 						"value": "[parameters('LS_SNOWFLAKE_properties_typeProperties_database')]"
-					},
-					"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
-						"value": "[parameters('LS_ADLS_BULK_SOURCE_properties_typeProperties_url')]"
-					},
-					"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
-						"value": "[parameters('LS_ADLS_BULK_SINK_properties_typeProperties_url')]"
 					}
 				}
 			},
