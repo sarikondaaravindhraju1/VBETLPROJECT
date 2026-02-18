@@ -17,6 +17,12 @@
 		"DS_EXCEL_PARQUET_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_JSON_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_ADLS_JSON_SOURCE_accountKey": {
+			"value": ""
+		},
 		"LS_ASSQL_EXCEL_password": {
 			"value": ""
 		},
@@ -78,6 +84,12 @@
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_JSON_SINK_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_JSON_SOURCE_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"LS_ASSQL_EXCEL_properties_typeProperties_server": {

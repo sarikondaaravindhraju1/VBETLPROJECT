@@ -23,6 +23,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DS_EXCEL_PARQUET_SOURCE'"
 		},
+		"LS_ADLS_JSON_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_JSON_SINK'"
+		},
+		"LS_ADLS_JSON_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_JSON_SOURCE'"
+		},
 		"LS_ASSQL_EXCEL_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_ASSQL_EXCEL'"
@@ -75,10 +83,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_REST_SINK_PARQUET'"
 		},
-		"LS_SNOWFLAKE_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'LS_SNOWFLAKE'"
-		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -100,6 +104,14 @@
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_JSON_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_JSON_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
@@ -218,14 +230,6 @@
 		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
-		},
-		"LS_REST_SOURCE_properties_typeProperties_url": {
-			"type": "string",
-			"defaultValue": "https://retoolapi.dev/rNNRBk/data"
-		},
-		"LS_SNOWFLAKE_properties_typeProperties_database": {
-			"type": "string",
-			"defaultValue": "DBAZURESNOW"
 		}
 	},
 	"variables": {
@@ -300,6 +304,40 @@
 					"accountKey": {
 						"type": "SecureString",
 						"value": "[parameters('DS_EXCEL_PARQUET_SOURCE_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_ADLS_JSON_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_ADLS_JSON_SINK_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_ADLS_JSON_SINK_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_ADLS_JSON_SOURCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('LS_ADLS_JSON_SOURCE_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('LS_ADLS_JSON_SOURCE_accountKey')]"
 					}
 				}
 			},
@@ -572,44 +610,6 @@
 						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
 					}
 				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_REST_SOURCE')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "RestService",
-				"typeProperties": {
-					"url": "[parameters('LS_REST_SOURCE_properties_typeProperties_url')]",
-					"enableServerCertificateValidation": true,
-					"authenticationType": "Anonymous"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_SNOWFLAKE')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "SnowflakeV2",
-				"typeProperties": {
-					"authenticationType": "Basic",
-					"accountIdentifier": "ZRWFBEY-OZ44803",
-					"user": "SarikondaAravindhRaju",
-					"database": "[parameters('LS_SNOWFLAKE_properties_typeProperties_database')]",
-					"warehouse": "COMPUTE_WH",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('LS_SNOWFLAKE_password')]"
-					},
-					"useUtcTimestamps": false
-				},
-				"version": "1.1"
 			},
 			"dependsOn": []
 		}
