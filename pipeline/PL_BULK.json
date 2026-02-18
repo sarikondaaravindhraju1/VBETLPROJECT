@@ -1,5 +1,5 @@
 {
-	"name": "bulk",
+	"name": "PL_BULK",
 	"properties": {
 		"activities": [
 			{
@@ -60,6 +60,11 @@
 				]
 			}
 		],
+		"parameters": {
+			"Trigger": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
