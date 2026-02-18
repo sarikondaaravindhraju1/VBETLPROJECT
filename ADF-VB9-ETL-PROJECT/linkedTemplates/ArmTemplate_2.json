@@ -310,6 +310,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'))",
+							"type": "Expression"
+						},
 						"folderPath": {
 							"value": "snowflake",
 							"type": "Expression"

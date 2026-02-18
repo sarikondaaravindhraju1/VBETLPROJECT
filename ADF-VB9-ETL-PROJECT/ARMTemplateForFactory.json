@@ -1799,6 +1799,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": {
+							"value": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'))",
+							"type": "Expression"
+						},
 						"folderPath": {
 							"value": "@concat(\n    'snowflake/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)",
 							"type": "Expression"
@@ -2555,6 +2559,10 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": {
+							"value": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'))",
+							"type": "Expression"
+						},
 						"folderPath": {
 							"value": "snowflake",
 							"type": "Expression"
@@ -3149,6 +3157,16 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/selfhostintegrationRuntime')]",
+			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"type": "SelfHosted",
+				"typeProperties": {}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/EVENT_TRIGGER_BLOB_TO_ADLS')]",
 			"type": "Microsoft.DataFactory/factories/triggers",
 			"apiVersion": "2018-06-01",
@@ -3178,16 +3196,6 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PL_SNOWFLAKE_EVENT_TRIGGER')]"
 			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/selfhostintegrationRuntime')]",
-			"type": "Microsoft.DataFactory/factories/integrationRuntimes",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"type": "SelfHosted",
-				"typeProperties": {}
-			},
-			"dependsOn": []
 		}
 	]
 }
