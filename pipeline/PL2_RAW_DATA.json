@@ -79,12 +79,15 @@
 							"value": "api",
 							"activities": [
 								{
-									"name": "Wait1",
-									"type": "Wait",
+									"name": "EXEC_REST",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 1
+										"waitOnCompletion": true
 									}
 								}
 							]
