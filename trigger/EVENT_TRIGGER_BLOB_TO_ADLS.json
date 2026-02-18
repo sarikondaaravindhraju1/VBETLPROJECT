@@ -1,0 +1,25 @@
+{
+	"name": "EVENT_TRIGGER_BLOB_TO_ADLS",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "PL_SNOWFLAKE_EVENT_TRIGGER",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/output/blobs/snowflake/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/84c81116-cff2-414a-9bbd-a5ca05fe7844/resourceGroups/RG_VB_DEV9_ETL/providers/Microsoft.Storage/storageAccounts/sablobetl",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}
