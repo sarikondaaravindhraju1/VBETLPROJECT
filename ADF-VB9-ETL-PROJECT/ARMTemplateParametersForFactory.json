@@ -32,6 +32,9 @@
 		"LS_AZSQL_SRCDB_password": {
 			"value": ""
 		},
+		"LS_AZSQL_TABLE_DETAILS_password": {
+			"value": ""
+		},
 		"LS_AZURESQLDB_SP_password": {
 			"value": ""
 		},
@@ -45,6 +48,12 @@
 			"value": ""
 		},
 		"LS_EXCEL_PARQUET_SOURCE_accountKey": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_password": {
+			"value": ""
+		},
+		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 			"value": ""
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
@@ -110,6 +119,15 @@
 		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
 			"value": "Aravindh"
 		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_server": {
+			"value": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_database": {
+			"value": "free-sql-db-0193140"
+		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_userName": {
+			"value": "Aravindh"
+		},
 		"LS_AZURESQLDB_SP_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
@@ -128,6 +146,9 @@
 		"LS_AZURESQL_SP_properties_typeProperties_userName": {
 			"value": "Aravindh"
 		},
+		"LS_BS_SNOWFLAKE_PARQUET_SINK_sasUri": {
+			"value": ""
+		},
 		"LS_CSV_PARQUET_SOURCE_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
@@ -136,6 +157,9 @@
 		},
 		"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
 		}
 	}
 }

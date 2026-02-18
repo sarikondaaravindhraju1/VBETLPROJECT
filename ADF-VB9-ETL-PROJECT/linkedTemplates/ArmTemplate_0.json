@@ -43,6 +43,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
 		},
+		"LS_AZSQL_TABLE_DETAILS_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_TABLE_DETAILS'"
+		},
 		"LS_AZURESQLDB_SP_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZURESQLDB_SP'"
@@ -62,6 +66,14 @@
 		"LS_EXCEL_PARQUET_SOURCE_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_EXCEL_PARQUET_SOURCE'"
+		},
+		"LS_SNOWFLAKE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SNOWFLAKE'"
+		},
+		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_SNOWFLAKE_BS_PARQUET'"
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
@@ -147,6 +159,18 @@
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
 		"LS_AZURESQLDB_SP_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -171,6 +195,10 @@
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
+		"LS_BS_SNOWFLAKE_PARQUET_SINK_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_BS_SNOWFLAKE_PARQUET_SINK'"
+		},
 		"LS_CSV_PARQUET_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
@@ -182,6 +210,10 @@
 		"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "DBAZURESNOW"
 		}
 	},
 	"variables": {
@@ -372,6 +404,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQL_TABLE_DETAILS')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQL_TABLE_DETAILS_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQL_TABLE_DETAILS_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQL_TABLE_DETAILS_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQL_TABLE_DETAILS_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_AZURESQLDB_SP')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -411,6 +465,19 @@
 						"type": "SecureString",
 						"value": "[parameters('LS_AZURESQL_SP_password')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_BS_SNOWFLAKE_PARQUET_SINK')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"sasUri": "[parameters('LS_BS_SNOWFLAKE_PARQUET_SINK_sasUri')]"
 				}
 			},
 			"dependsOn": []
@@ -467,6 +534,42 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_SNOWFLAKE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "SnowflakeV2",
+				"typeProperties": {
+					"authenticationType": "Basic",
+					"accountIdentifier": "ZRWFBEY-OZ44803",
+					"user": "SarikondaAravindhRaju",
+					"database": "[parameters('LS_SNOWFLAKE_properties_typeProperties_database')]",
+					"warehouse": "COMPUTE_WH",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_SNOWFLAKE_password')]"
+					},
+					"useUtcTimestamps": false
+				},
+				"version": "1.1"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/LS_SNOWFLAKE_BS_PARQUET')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobStorage",
+				"typeProperties": {
+					"connectionString": "[parameters('LS_SNOWFLAKE_BS_PARQUET_connectionString')]"
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/DS_AZSQLDB_CSV')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -500,88 +603,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_CSVEXCEL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZSQLDB_EXCEL')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AZSQLDB_EXCEL",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQLDB_EXCEL')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZSQL_DB')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AZSQL_DB",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQL_DB')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_AZSQL_SRCDB')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "LS_AZSQL_SRCDB",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "AzureSqlTable",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/LS_AZSQL_SRCDB')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/DS_CSV_PARQUET_SINK')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "DS_CSV_PARQUET_SINK",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "Parquet",
-				"typeProperties": {
-					"location": {
-						"type": "AzureBlobFSLocation",
-						"folderPath": {
-							"value": "@concat(\n    'csv/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)",
-							"type": "Expression"
-						},
-						"fileSystem": "output"
-					},
-					"compressionCodec": "snappy"
-				},
-				"schema": []
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DS_CSV_PARQUET_SINK')]"
 			]
 		}
 	]
