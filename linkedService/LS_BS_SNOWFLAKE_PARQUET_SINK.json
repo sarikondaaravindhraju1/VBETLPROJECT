@@ -1,0 +1,12 @@
+{
+	"name": "LS_BS_SNOWFLAKE_PARQUET_SINK",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": "DefaultEndpointsProtocol=https;AccountName=sablobetl;EndpointSuffix=core.windows.net;",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDYzMzUzQUZFLUM4NUItNEVBRS05RDFCLUJENDRBOTI2Nzc2OF8xY2Q5NzU1OS02YTRlLTQ4ZWUtYTE1MS05MWUyMGM0YWU5OGUiDQp9"
+		}
+	}
+}
