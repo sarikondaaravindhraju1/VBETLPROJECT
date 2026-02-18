@@ -142,6 +142,33 @@
 									}
 								}
 							]
+						},
+						{
+							"value": "json",
+							"activities": [
+								{
+									"name": "EXEC_JSON",
+									"type": "ExecutePipeline",
+									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
+									"userProperties": [],
+									"typeProperties": {
+										"pipeline": {
+											"referenceName": "PL_JSON",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.Trigger",
+												"type": "Expression"
+											}
+										}
+									}
+								}
+							]
 						}
 					]
 				}
