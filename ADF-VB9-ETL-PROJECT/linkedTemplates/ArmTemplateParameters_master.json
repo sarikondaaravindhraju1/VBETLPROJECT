@@ -17,6 +17,9 @@
 		"DS_EXCEL_PARQUET_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_ADLS_AZUREEVENT_SINK_accountKey": {
+			"value": ""
+		},
 		"LS_ADLS_BULK_SINK_accountKey": {
 			"value": ""
 		},
@@ -53,6 +56,9 @@
 		"LS_AZURESQL_SP_password": {
 			"value": ""
 		},
+		"LS_BLOB_AZURE_EVENT_SOURCE_connectionString": {
+			"value": ""
+		},
 		"LS_BS_PARQUET_connectionString": {
 			"value": ""
 		},
@@ -74,6 +80,9 @@
 		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 			"value": ""
 		},
+		"LS_SNOWFLAKE_CSV_SINK_accountKey": {
+			"value": ""
+		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
@@ -90,6 +99,9 @@
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"DS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_AZUREEVENT_SINK_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
@@ -196,6 +208,12 @@
 		},
 		"LS_SNOWFLAKE_properties_typeProperties_database": {
 			"value": "DBAZURESNOW"
+		},
+		"LS_SNOWFLAKE_CSV_SINK_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"EVENT_TRIGGER_BLOB_TO_ADLS_properties_typeProperties_scope": {
+			"value": "/subscriptions/84c81116-cff2-414a-9bbd-a5ca05fe7844/resourceGroups/RG_VB_DEV9_ETL/providers/Microsoft.Storage/storageAccounts/sablobetl"
 		},
 		"containerUri": {
 			"value": ""
