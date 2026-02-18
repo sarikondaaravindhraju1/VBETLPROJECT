@@ -53,13 +53,13 @@
 		"LS_EXCEL_PARQUET_SOURCE_accountKey": {
 			"value": ""
 		},
+		"LS_REST_SINK_PARQUET_accountKey": {
+			"value": ""
+		},
 		"LS_SNOWFLAKE_password": {
 			"value": ""
 		},
 		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
-			"value": ""
-		},
-		"LS_REST_SINK_PARQUET_accountKey": {
 			"value": ""
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
@@ -164,14 +164,14 @@
 		"LS_EXCEL_PARQUET_SOURCE_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
-		"LS_SNOWFLAKE_properties_typeProperties_database": {
-			"value": "DBAZURESNOW"
+		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"LS_REST_SOURCE_properties_typeProperties_url": {
 			"value": "https://retoolapi.dev/rNNRBk/data"
 		},
-		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
-			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		"LS_SNOWFLAKE_properties_typeProperties_database": {
+			"value": "DBAZURESNOW"
 		}
 	}
 }

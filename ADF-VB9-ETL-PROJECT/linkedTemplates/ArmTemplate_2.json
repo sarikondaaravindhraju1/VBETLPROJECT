@@ -354,7 +354,7 @@
 									]
 								},
 								{
-									"value": "api",
+									"value": "API",
 									"activities": [
 										{
 											"name": "EXEC_REST",
