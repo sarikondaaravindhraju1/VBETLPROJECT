@@ -55,6 +55,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZURESQL_SP'"
 		},
+		"LS_BS_PARQUET_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BS_PARQUET'"
+		},
 		"LS_CSV_PARQUET_SOURCE_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'LS_CSV_PARQUET_SOURCE'"
@@ -75,9 +79,9 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SNOWFLAKE_BS_PARQUET'"
 		},
-		"LS_BS_PARQUET_connectionString": {
+		"LS_REST_SINK_PARQUET_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_BS_PARQUET'"
+			"metadata": "Secure string for 'accountKey' of 'LS_REST_SINK_PARQUET'"
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
@@ -219,6 +223,14 @@
 			"type": "string",
 			"defaultValue": "DBAZURESNOW"
 		},
+		"LS_REST_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://retoolapi.dev/rNNRBk/data"
+		},
+		"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -282,6 +294,9 @@
 					"LS_AZURESQL_SP_password": {
 						"value": "[parameters('LS_AZURESQL_SP_password')]"
 					},
+					"LS_BS_PARQUET_connectionString": {
+						"value": "[parameters('LS_BS_PARQUET_connectionString')]"
+					},
 					"LS_CSV_PARQUET_SOURCE_accountKey": {
 						"value": "[parameters('LS_CSV_PARQUET_SOURCE_accountKey')]"
 					},
@@ -296,9 +311,6 @@
 					},
 					"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 						"value": "[parameters('LS_SNOWFLAKE_BS_PARQUET_connectionString')]"
-					},
-					"LS_BS_PARQUET_connectionString": {
-						"value": "[parameters('LS_BS_PARQUET_connectionString')]"
 					},
 					"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 						"value": "[parameters('DS_AZSQLDB_CSV_properties_typeProperties_server')]"
@@ -422,11 +434,40 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"LS_REST_SINK_PARQUET_accountKey": {
+						"value": "[parameters('LS_REST_SINK_PARQUET_accountKey')]"
+					},
+					"LS_REST_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_REST_SINK_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('LS_REST_SINK_PARQUET_properties_typeProperties_url')]"
 					}
 				}
 			},
 			"dependsOn": [
 				"[resourceId('Microsoft.Resources/deployments', 'ADF-VB9-ETL-PROJECT_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ADF-VB9-ETL-PROJECT_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ADF-VB9-ETL-PROJECT_ArmTemplate_1')]"
 			]
 		}
 	]
