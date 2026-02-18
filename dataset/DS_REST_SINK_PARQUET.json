@@ -14,7 +14,7 @@
 					"value": "@concat(\n    'rest/',\n    formatDateTime(utcNow(), 'yyyy'), '/',\n    formatDateTime(utcNow(), 'MM'), '/',\n    formatDateTime(utcNow(), 'dd')\n)",
 					"type": "Expression"
 				},
-				"fileSystem": "input"
+				"fileSystem": "output"
 			},
 			"compressionCodec": "snappy"
 		},
