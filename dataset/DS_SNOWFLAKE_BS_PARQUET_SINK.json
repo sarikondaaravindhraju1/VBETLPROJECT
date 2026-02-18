@@ -1,0 +1,19 @@
+{
+	"name": "DS_SNOWFLAKE_BS_PARQUET_SINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_BS_SNOWFLAKE_PARQUET_SINK",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
