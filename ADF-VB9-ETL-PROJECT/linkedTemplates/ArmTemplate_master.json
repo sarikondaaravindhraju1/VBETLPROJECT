@@ -75,6 +75,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SNOWFLAKE_BS_PARQUET'"
 		},
+		"LS_BS_PARQUET_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LS_BS_PARQUET'"
+		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -292,6 +296,9 @@
 					},
 					"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 						"value": "[parameters('LS_SNOWFLAKE_BS_PARQUET_connectionString')]"
+					},
+					"LS_BS_PARQUET_connectionString": {
+						"value": "[parameters('LS_BS_PARQUET_connectionString')]"
 					},
 					"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 						"value": "[parameters('DS_AZSQLDB_CSV_properties_typeProperties_server')]"

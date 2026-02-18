@@ -56,6 +56,9 @@
 		"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 			"value": ""
 		},
+		"LS_BS_PARQUET_connectionString": {
+			"value": ""
+		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
