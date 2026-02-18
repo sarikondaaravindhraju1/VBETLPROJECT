@@ -91,6 +91,14 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_SNOWFLAKE_BS_PARQUET'"
 		},
+		"LS_ADLS_BULK_SOURCE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SOURCE'"
+		},
+		"LS_ADLS_BULK_SINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_ADLS_BULK_SINK'"
+		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -246,6 +254,14 @@
 		"LS_SNOWFLAKE_properties_typeProperties_database": {
 			"type": "string",
 			"defaultValue": "DBAZURESNOW"
+		},
+		"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
+		},
+		"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://savb9etlraw.dfs.core.windows.net/"
 		},
 		"containerUri": {
 			"type": "string",
@@ -466,11 +482,23 @@
 					"LS_SNOWFLAKE_BS_PARQUET_connectionString": {
 						"value": "[parameters('LS_SNOWFLAKE_BS_PARQUET_connectionString')]"
 					},
+					"LS_ADLS_BULK_SOURCE_accountKey": {
+						"value": "[parameters('LS_ADLS_BULK_SOURCE_accountKey')]"
+					},
+					"LS_ADLS_BULK_SINK_accountKey": {
+						"value": "[parameters('LS_ADLS_BULK_SINK_accountKey')]"
+					},
 					"LS_REST_SOURCE_properties_typeProperties_url": {
 						"value": "[parameters('LS_REST_SOURCE_properties_typeProperties_url')]"
 					},
 					"LS_SNOWFLAKE_properties_typeProperties_database": {
 						"value": "[parameters('LS_SNOWFLAKE_properties_typeProperties_database')]"
+					},
+					"LS_ADLS_BULK_SOURCE_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_BULK_SOURCE_properties_typeProperties_url')]"
+					},
+					"LS_ADLS_BULK_SINK_properties_typeProperties_url": {
+						"value": "[parameters('LS_ADLS_BULK_SINK_properties_typeProperties_url')]"
 					}
 				}
 			},
