@@ -865,33 +865,6 @@
 											}
 										}
 									]
-								},
-								{
-									"value": "json",
-									"activities": [
-										{
-											"name": "EXEC_JSON",
-											"type": "ExecutePipeline",
-											"dependsOn": [],
-											"policy": {
-												"secureInput": false
-											},
-											"userProperties": [],
-											"typeProperties": {
-												"pipeline": {
-													"referenceName": "PL_JSON",
-													"type": "PipelineReference"
-												},
-												"waitOnCompletion": true,
-												"parameters": {
-													"Trigger": {
-														"value": "@pipeline().parameters.Trigger",
-														"type": "Expression"
-													}
-												}
-											}
-										}
-									]
 								}
 							]
 						}
@@ -915,8 +888,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PL_CSV')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_EXCEL')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_JSON')]"
+				"[concat(variables('factoryId'), '/pipelines/PL_EXCEL')]"
 			]
 		},
 		{
@@ -1198,6 +1170,33 @@
 											}
 										}
 									]
+								},
+								{
+									"value": "json",
+									"activities": [
+										{
+											"name": "EXEC_JSON",
+											"type": "ExecutePipeline",
+											"dependsOn": [],
+											"policy": {
+												"secureInput": false
+											},
+											"userProperties": [],
+											"typeProperties": {
+												"pipeline": {
+													"referenceName": "PL_JSON",
+													"type": "PipelineReference"
+												},
+												"waitOnCompletion": true,
+												"parameters": {
+													"Trigger": {
+														"value": "@pipeline().parameters.Trigger",
+														"type": "Expression"
+													}
+												}
+											}
+										}
+									]
 								}
 							]
 						}
@@ -1222,7 +1221,8 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/pipelines/PL3_CLOUDSG_CSV_EXCEL')]",
 				"[concat(variables('factoryId'), '/pipelines/PL_REST')]",
-				"[concat(variables('factoryId'), '/pipelines/PL_SNOWFLAKE')]"
+				"[concat(variables('factoryId'), '/pipelines/PL_SNOWFLAKE')]",
+				"[concat(variables('factoryId'), '/pipelines/PL_JSON')]"
 			]
 		},
 		{
