@@ -47,6 +47,9 @@
 		"LS_AZSQL_SRCDB_password": {
 			"value": ""
 		},
+		"LS_AZSQL_TABLES_SOURCE_password": {
+			"value": ""
+		},
 		"LS_AZSQL_TABLE_DETAILS_password": {
 			"value": ""
 		},
@@ -86,13 +89,10 @@
 		"LS_SNOWFLAKE_CSV_SINK_accountKey": {
 			"value": ""
 		},
-		"LS_SQLTBL_DYNAMIC_password": {
-			"value": ""
-		},
-		"LS_AZSQL_TABLES_SOURCE_password": {
-			"value": ""
-		},
 		"LS_SQLTABLES_PARQUET_SINK_accountKey": {
+			"value": ""
+		},
+		"LS_SQLTBL_DYNAMIC_password": {
 			"value": ""
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
@@ -173,6 +173,15 @@
 		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
 			"value": "Aravindh"
 		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_server": {
+			"value": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_database": {
+			"value": "free-sql-db-0193140"
+		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_userName": {
+			"value": "Aravindh"
+		},
 		"LS_AZSQL_TABLE_DETAILS_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
@@ -233,6 +242,9 @@
 		"LS_SNOWFLAKE_CSV_SINK_properties_typeProperties_url": {
 			"value": "https://savb9etlraw.dfs.core.windows.net/"
 		},
+		"LS_SQLTABLES_PARQUET_SINK_properties_typeProperties_url": {
+			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		},
 		"LS_SQLTBL_DYNAMIC_properties_typeProperties_server": {
 			"value": "aravindhraju.database.windows.net"
 		},
@@ -245,17 +257,8 @@
 		"EVENT_TRIGGER_BLOB_TO_ADLS_properties_typeProperties_scope": {
 			"value": "/subscriptions/84c81116-cff2-414a-9bbd-a5ca05fe7844/resourceGroups/RG_VB_DEV9_ETL/providers/Microsoft.Storage/storageAccounts/sablobetl"
 		},
-		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_server": {
-			"value": "aravindhraju.database.windows.net"
-		},
-		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_database": {
-			"value": "free-sql-db-0193140"
-		},
-		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_userName": {
-			"value": "Aravindh"
-		},
-		"LS_SQLTABLES_PARQUET_SINK_properties_typeProperties_url": {
-			"value": "https://savb9etlraw.dfs.core.windows.net/"
+		"schedule_trigger_properties_PL1_MASTER_parameters_Trigger": {
+			"value": "[dbo].[vb_tbl_trigger].trigger_name"
 		}
 	}
 }

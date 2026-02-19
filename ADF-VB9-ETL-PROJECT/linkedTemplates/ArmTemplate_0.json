@@ -63,6 +63,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_SRCDB'"
 		},
+		"LS_AZSQL_TABLES_SOURCE_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_TABLES_SOURCE'"
+		},
 		"LS_AZSQL_TABLE_DETAILS_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_TABLE_DETAILS'"
@@ -82,10 +86,6 @@
 		"LS_BLOB_AZURE_EVENT_SOURCE_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'LS_BLOB_AZURE_EVENT_SOURCE'"
-		},
-		"LS_BS_PARQUET_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'LS_BS_PARQUET'"
 		},
 		"DS_AZSQLDB_CSV_properties_typeProperties_server": {
 			"type": "string",
@@ -188,6 +188,18 @@
 			"defaultValue": "free-sql-db-0193140"
 		},
 		"LS_AZSQL_SRCDB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZSQL_TABLES_SOURCE_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
@@ -513,6 +525,28 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQL_TABLES_SOURCE')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQL_TABLES_SOURCE_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQL_TABLES_SOURCE_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQL_TABLES_SOURCE_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQL_TABLES_SOURCE_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_AZSQL_TABLE_DETAILS')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -612,19 +646,6 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('LS_BLOB_AZURE_EVENT_SOURCE_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_BS_PARQUET')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('LS_BS_PARQUET_connectionString')]"
 				}
 			},
 			"dependsOn": []
