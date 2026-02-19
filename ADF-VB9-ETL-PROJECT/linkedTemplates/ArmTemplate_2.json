@@ -468,7 +468,7 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": {
-							"value": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'))",
+							"value": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'),'.parquet')",
 							"type": "Expression"
 						},
 						"folderPath": {
