@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "@concat('order_items',formatDateTime(utcNow(),'yyyyMMdd_HHmmss'),'.parquet')",
 				"folderPath": {
 					"value": "snowflake",
 					"type": "Expression"
