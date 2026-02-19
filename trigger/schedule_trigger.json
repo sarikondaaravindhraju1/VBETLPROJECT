@@ -8,6 +8,9 @@
 				"pipelineReference": {
 					"referenceName": "PL1_MASTER",
 					"type": "PipelineReference"
+				},
+				"parameters": {
+					"Trigger": "[dbo].[vb_tbl_trigger].trigger_name"
 				}
 			}
 		],
