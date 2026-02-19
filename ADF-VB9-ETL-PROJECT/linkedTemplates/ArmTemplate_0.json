@@ -67,6 +67,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZSQL_TABLE_DETAILS'"
 		},
+		"LS_AZSQL_Tables_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_AZSQL_Tables'"
+		},
 		"LS_AZURESQLDB_SP_password": {
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'LS_AZURESQLDB_SP'"
@@ -199,6 +203,18 @@
 			"type": "string",
 			"defaultValue": "Aravindh"
 		},
+		"LS_AZSQL_Tables_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "aravindhraju.database.windows.net"
+		},
+		"LS_AZSQL_Tables_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "free-sql-db-0193140"
+		},
+		"LS_AZSQL_Tables_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Aravindh"
+		},
 		"LS_AZURESQLDB_SP_properties_typeProperties_server": {
 			"type": "string",
 			"defaultValue": "aravindhraju.database.windows.net"
@@ -222,10 +238,6 @@
 		"LS_AZURESQL_SP_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "Aravindh"
-		},
-		"LS_BS_SNOWFLAKE_PARQUET_SINK_sasUri": {
-			"type": "secureString",
-			"metadata": "Secure string for 'sasUri' of 'LS_BS_SNOWFLAKE_PARQUET_SINK'"
 		}
 	},
 	"variables": {
@@ -523,6 +535,31 @@
 			"dependsOn": []
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/LS_AZSQL_Tables')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('LS_AZSQL_Tables_properties_typeProperties_server')]",
+					"database": "[parameters('LS_AZSQL_Tables_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('LS_AZSQL_Tables_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('LS_AZSQL_Tables_password')]"
+					},
+					"alwaysEncryptedSettings": {
+						"alwaysEncryptedAkvAuthType": "ManagedIdentity"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/LS_AZURESQLDB_SP')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
@@ -588,19 +625,6 @@
 				"type": "AzureBlobStorage",
 				"typeProperties": {
 					"connectionString": "[parameters('LS_BS_PARQUET_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/LS_BS_SNOWFLAKE_PARQUET_SINK')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"sasUri": "[parameters('LS_BS_SNOWFLAKE_PARQUET_SINK_sasUri')]"
 				}
 			},
 			"dependsOn": []
