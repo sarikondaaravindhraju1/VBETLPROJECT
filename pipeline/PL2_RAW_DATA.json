@@ -106,12 +106,25 @@
 							"value": "sql",
 							"activities": [
 								{
-									"name": "Wait2",
-									"type": "Wait",
+									"name": "EXEC_PL_SQL",
+									"type": "ExecutePipeline",
 									"dependsOn": [],
+									"policy": {
+										"secureInput": false
+									},
 									"userProperties": [],
 									"typeProperties": {
-										"waitTimeInSeconds": 1
+										"pipeline": {
+											"referenceName": "PL_SQL",
+											"type": "PipelineReference"
+										},
+										"waitOnCompletion": true,
+										"parameters": {
+											"Trigger": {
+												"value": "@pipeline().parameters.Trigger",
+												"type": "Expression"
+											}
+										}
 									}
 								}
 							]

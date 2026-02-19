@@ -1,0 +1,30 @@
+{
+	"name": "DS_AZSQL_TABLES_SOURCE",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_AZSQL_TABLES_SOURCE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"Schema": {
+				"type": "string"
+			},
+			"Table": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().Schema",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().Table",
+				"type": "Expression"
+			}
+		}
+	}
+}

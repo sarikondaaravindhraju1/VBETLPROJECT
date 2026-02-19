@@ -17,7 +17,7 @@
 				"typeProperties": {
 					"source": {
 						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT TABLE_NAME, TABLE_SCHEMA from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = BASE_TABLE and ",
+						"sqlReaderQuery": "SELECT TABLE_NAME, TABLE_SCHEMA from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = 'BASE TABLE' and TABLE_SCHEMA = 'sqltables'",
 						"queryTimeout": "02:00:00",
 						"partitionOption": "None"
 					},
@@ -27,8 +27,94 @@
 					},
 					"firstRowOnly": false
 				}
+			},
+			{
+				"name": "FOREACH_SQL_TABLES",
+				"type": "ForEach",
+				"dependsOn": [
+					{
+						"activity": "GET_LIST_OF_ALL_TABLES",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GET_LIST_OF_ALL_TABLES').output.value",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "CPY_SQL_TABLES",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "AzureSqlSource",
+									"queryTimeout": "02:00:00",
+									"partitionOption": "None"
+								},
+								"sink": {
+									"type": "ParquetSink",
+									"storeSettings": {
+										"type": "AzureBlobFSWriteSettings"
+									},
+									"formatSettings": {
+										"type": "ParquetWriteSettings"
+									}
+								},
+								"enableStaging": false,
+								"translator": {
+									"type": "TabularTranslator",
+									"typeConversion": true,
+									"typeConversionSettings": {
+										"allowDataTruncation": true,
+										"treatBooleanAsNumber": false
+									}
+								}
+							},
+							"inputs": [
+								{
+									"referenceName": "DS_AZSQL_TABLES_SOURCE",
+									"type": "DatasetReference",
+									"parameters": {
+										"Schema": {
+											"value": "@item().TABLE_SCHEMA",
+											"type": "Expression"
+										},
+										"Table": {
+											"value": "@item().TABLE_NAME",
+											"type": "Expression"
+										}
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DS_SQLTABLES_PARQUET_SINK",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
 			}
 		],
+		"parameters": {
+			"Trigger": {
+				"type": "string"
+			}
+		},
 		"annotations": []
 	}
 }
