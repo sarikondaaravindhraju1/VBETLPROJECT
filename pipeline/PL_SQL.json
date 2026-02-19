@@ -1,0 +1,34 @@
+{
+	"name": "PL_SQL",
+	"properties": {
+		"activities": [
+			{
+				"name": "GET_LIST_OF_ALL_TABLES",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT TABLE_NAME, TABLE_SCHEMA from INFORMATION_SCHEMA.TABLES where TABLE_TYPE = BASE_TABLE and ",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "DS_AZSQL_TABLE_DETAILS",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			}
+		],
+		"annotations": []
+	}
+}
